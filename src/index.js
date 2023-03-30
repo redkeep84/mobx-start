@@ -14,7 +14,7 @@ const person = observable({
 
 class PersonStore {
   @observable
-  name = 'Mark';
+  name = "Mark";
 
   @observable
   age = 39;
@@ -22,21 +22,29 @@ class PersonStore {
   constructor() {
     makeObservable(this);
   }
+
+  plus() {
+    this.age++;
+  }
 }
 
-const personStore = new PersonStore();
+export const personStore = new PersonStore();
 
-autorun(() => {
-  console.log(isLogin.get());
-  console.log(person.age);
-  console.log(personStore.age);
-});
+// setInterval(() => {
+//   personStore.age++;
+// }, 1000);
 
-isLogin.set(false);
+// autorun(() => {
+//   console.log(isLogin.get());
+//   console.log(person.age);
+//   console.log(personStore.age);
+// });
 
-person.age = 40;
+// isLogin.set(false);
 
-personStore.age = 50;
+// person.age = 40;
+
+// personStore.age = 50;
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
