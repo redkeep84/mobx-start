@@ -20,7 +20,7 @@ export default class PersonStore {
     this.age++;
   }
 
-//   @action
+  @action
   testAction() {
     this.age = 45;
     this.name = "Woongjae";
