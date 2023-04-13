@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import { observable } from 'mobx';
 import PersonContext from './contexts/PersonContext';
 import PersonStore from './stores/PersonStore';
+import { Provider } from 'mobx-react';
 
 // const isLogin = observable(true);
 
@@ -35,9 +36,9 @@ const personStore = new PersonStore();
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <PersonContext.Provider value={personStore}>
-    <App />
-    </PersonContext.Provider>    
+    <Provider personStore={personStore}>
+      <App />
+    </Provider>    
   </React.StrictMode>
 );
 
